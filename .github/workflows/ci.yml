@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: vet
+        run: make vet
+      - name: test
+        run: go test -race ./...
+      - name: build
+        run: make dist
+      - name: smoke test
+        run: |
+          ./dist/linux-amd64/ipcollect-nvidia --simulate --interval 1s --duration 3s --out smoke.csv
+          ./dist/linux-amd64/ipcollect-amd --simulate --interval 1s --duration 3s --format jsonl --out smoke.jsonl
+          ./dist/linux-amd64/ipview smoke.csv
+          ./dist/linux-amd64/ipview --all smoke.jsonl

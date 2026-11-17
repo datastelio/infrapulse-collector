@@ -1,0 +1,12 @@
+{
+  "gpu_data": [
+    {
+      "gpu": 3,
+      "usage": {"gfx_activity": {"value": 54, "unit": "%"}},
+      "power": {"socket_power": {"value": 301.5, "unit": "W"}, "power_cap": {"value": 550, "unit": "W"}},
+      "clock": {"GFX_0": {"CLK": {"value": 1700, "unit": "MHz"}, "MAX_CLK": {"value": 1700, "unit": "MHz"}}},
+      "temperature": {"edge": {"value": 52, "unit": "C"}},
+      "mem_usage": {"total_vram": {"value": 64, "unit": "GB"}, "used_vram": {"value": 17179869184, "unit": "B"}}
+    }
+  ]
+}

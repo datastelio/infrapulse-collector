@@ -1,0 +1,25 @@
+{
+  "card0": {
+    "Temperature (Sensor edge) (C)": "47.0",
+    "Temperature (Sensor junction) (C)": "52.0",
+    "Temperature (Sensor memory) (C)": "55.0",
+    "sclk clock speed:": "(1700Mhz)",
+    "sclk clock level:": "8",
+    "mclk clock speed:": "(1600Mhz)",
+    "Average Graphics Package Power (W)": "245.0",
+    "GPU use (%)": "76",
+    "GPU Memory Allocated (VRAM%)": "40",
+    "GPU Memory Read/Write Activity (%)": "22",
+    "VRAM Total Memory (B)": "68702699520",
+    "VRAM Total Used Memory (B)": "27481079808"
+  },
+  "card1": {
+    "Temperature (Sensor edge) (C)": "N/A",
+    "Temperature (Sensor junction) (C)": "39.0",
+    "GPU use (%)": "0",
+    "GPU memory use (%)": "0",
+    "Current Socket Graphics Package Power (W)": "88.0",
+    "Max Graphics Package Power (W)": "500.0"
+  },
+  "system": {"Driver version": "6.8.5"}
+}

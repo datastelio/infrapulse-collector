@@ -1,0 +1,14 @@
+{
+  "card0": {
+    "Card Series": "AMD Instinct MI250X",
+    "Card Model": "0x7408",
+    "Card Vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+    "Card SKU": "D65209",
+    "Unique ID": "0x0000000000000a00",
+    "Max Graphics Package Power (W)": "560.0"
+  },
+  "card1": {
+    "Card Series": "AMD Instinct MI250X",
+    "Unique ID": "0x0000000000000a01"
+  }
+}

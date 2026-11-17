@@ -1,0 +1,27 @@
+# Binaries
+/bin/
+/dist/
+/ipcollect-nvidia
+/ipcollect-amd
+/ipview
+*.exe
+*.test
+*.out
+
+# Collector output at the repo root
+/*.csv
+/*.jsonl
+
+# Local output folders
+/out/
+/output/
+/tmp/
+
+# Secrets and local settings
+.env
+.env.*
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/

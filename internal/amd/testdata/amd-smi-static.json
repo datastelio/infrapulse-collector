@@ -1,0 +1,12 @@
+[
+  {
+    "gpu": 0,
+    "asic": {"market_name": "AMD Instinct MI300X", "vendor_id": "0x1002", "device_id": "0x0000"},
+    "limit": {"max_power": {"value": 750, "unit": "W"}, "slowdown_edge_temperature": "N/A"}
+  },
+  {
+    "gpu": 1,
+    "asic": {"market_name": "AMD Instinct MI300X"},
+    "limit": {"max_power": "N/A"}
+  }
+]
