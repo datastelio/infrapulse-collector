@@ -27,3 +27,7 @@ jobs:
           ./dist/linux-amd64/ipcollect-amd --simulate --interval 1s --duration 3s --format jsonl --out smoke.jsonl
           ./dist/linux-amd64/ipview smoke.csv
           ./dist/linux-amd64/ipview --all smoke.jsonl
+          ./dist/linux-amd64/ipcollect --help > /dev/null
+          ./dist/linux-amd64/ipcollect version
+          ./dist/linux-amd64/ipcollect fields --dcgm-exporter-csv | diff - fields/infrapulse-dcgm-fields.csv
+          ! ./dist/linux-amd64/ipcollect run --no-such-flag

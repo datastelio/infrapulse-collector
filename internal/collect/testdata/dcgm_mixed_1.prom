@@ -1,0 +1,390 @@
+# HELP DCGM_FI_DEV_GPU_UTIL GPU utilization: share of time one or more kernels was running (in %).
+# TYPE DCGM_FI_DEV_GPU_UTIL gauge
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 98
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 93
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 98
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 78
+DCGM_FI_DEV_GPU_UTIL{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 97
+DCGM_FI_DEV_GPU_UTIL{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 99
+DCGM_FI_DEV_GPU_UTIL{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 97
+DCGM_FI_DEV_GPU_UTIL{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 95
+# HELP DCGM_FI_DEV_MEM_COPY_UTIL Memory utilization (in %).
+# TYPE DCGM_FI_DEV_MEM_COPY_UTIL gauge
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 31
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 29
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 6
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 42
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 27
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 29
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 32
+DCGM_FI_DEV_MEM_COPY_UTIL{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 25
+# HELP DCGM_FI_DEV_FB_USED Framebuffer memory used (in MiB).
+# TYPE DCGM_FI_DEV_FB_USED gauge
+DCGM_FI_DEV_FB_USED{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 62259
+DCGM_FI_DEV_FB_USED{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 45056
+DCGM_FI_DEV_FB_USED{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 12288
+DCGM_FI_DEV_FB_USED{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 45056
+DCGM_FI_DEV_FB_USED{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 62259
+DCGM_FI_DEV_FB_USED{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 62259
+DCGM_FI_DEV_FB_USED{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 62259
+DCGM_FI_DEV_FB_USED{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 62259
+# HELP DCGM_FI_DEV_FB_FREE Framebuffer memory free (in MiB).
+# TYPE DCGM_FI_DEV_FB_FREE gauge
+DCGM_FI_DEV_FB_FREE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 19661
+DCGM_FI_DEV_FB_FREE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 36864
+DCGM_FI_DEV_FB_FREE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 69632
+DCGM_FI_DEV_FB_FREE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 36864
+DCGM_FI_DEV_FB_FREE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 19661
+DCGM_FI_DEV_FB_FREE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 19661
+DCGM_FI_DEV_FB_FREE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 19661
+DCGM_FI_DEV_FB_FREE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 19661
+# HELP DCGM_FI_DEV_POWER_USAGE Power draw (in W).
+# TYPE DCGM_FI_DEV_POWER_USAGE gauge
+DCGM_FI_DEV_POWER_USAGE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 352.385
+DCGM_FI_DEV_POWER_USAGE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 303.35
+DCGM_FI_DEV_POWER_USAGE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 161.018
+DCGM_FI_DEV_POWER_USAGE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 248.932
+DCGM_FI_DEV_POWER_USAGE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 247.45
+DCGM_FI_DEV_POWER_USAGE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 246.429
+DCGM_FI_DEV_POWER_USAGE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 351.049
+DCGM_FI_DEV_POWER_USAGE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 324.757
+# HELP DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION Total energy consumption since boot (in mJ).
+# TYPE DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION counter
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 1.00352385e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 1.0130335e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 1.02161018e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1.03248932e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 1.0424745e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 1.05246429e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 1.06351049e+09
+DCGM_FI_DEV_TOTAL_ENERGY_CONSUMPTION{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 1.07324757e+09
+# HELP DCGM_FI_DEV_GPU_TEMP GPU temperature (in C).
+# TYPE DCGM_FI_DEV_GPU_TEMP gauge
+DCGM_FI_DEV_GPU_TEMP{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 63
+DCGM_FI_DEV_GPU_TEMP{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 53
+DCGM_FI_DEV_GPU_TEMP{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 52
+DCGM_FI_DEV_GPU_TEMP{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 57
+DCGM_FI_DEV_GPU_TEMP{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 59
+DCGM_FI_DEV_GPU_TEMP{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 56
+DCGM_FI_DEV_GPU_TEMP{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 64
+DCGM_FI_DEV_GPU_TEMP{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 63
+# HELP DCGM_FI_DEV_SM_CLOCK SM clock frequency (in MHz).
+# TYPE DCGM_FI_DEV_SM_CLOCK gauge
+DCGM_FI_DEV_SM_CLOCK{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 1410
+DCGM_FI_DEV_SM_CLOCK{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 1410
+DCGM_FI_DEV_SM_CLOCK{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 1410
+DCGM_FI_DEV_SM_CLOCK{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1410
+DCGM_FI_DEV_SM_CLOCK{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 1150
+DCGM_FI_DEV_SM_CLOCK{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 1005
+DCGM_FI_DEV_SM_CLOCK{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 1410
+DCGM_FI_DEV_SM_CLOCK{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 1410
+# HELP DCGM_FI_DEV_MEM_CLOCK Memory clock frequency (in MHz).
+# TYPE DCGM_FI_DEV_MEM_CLOCK gauge
+DCGM_FI_DEV_MEM_CLOCK{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 1593
+DCGM_FI_DEV_MEM_CLOCK{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 1593
+# HELP DCGM_FI_DEV_MEMORY_TEMP Memory (HBM) temperature (in C).
+# TYPE DCGM_FI_DEV_MEMORY_TEMP gauge
+DCGM_FI_DEV_MEMORY_TEMP{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 69
+DCGM_FI_DEV_MEMORY_TEMP{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 58
+DCGM_FI_DEV_MEMORY_TEMP{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 56
+DCGM_FI_DEV_MEMORY_TEMP{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 61
+DCGM_FI_DEV_MEMORY_TEMP{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 66
+DCGM_FI_DEV_MEMORY_TEMP{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 64
+DCGM_FI_DEV_MEMORY_TEMP{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 72
+DCGM_FI_DEV_MEMORY_TEMP{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 72
+# HELP DCGM_FI_DEV_PSTATE Performance state (P-state) 0-15.
+# TYPE DCGM_FI_DEV_PSTATE gauge
+DCGM_FI_DEV_PSTATE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_PSTATE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_PSTATE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_PSTATE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_PSTATE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_PSTATE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_PSTATE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_PSTATE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_CLOCKS_EVENT_REASONS Current clock event (throttle) reasons bitmask.
+# TYPE DCGM_FI_DEV_CLOCKS_EVENT_REASONS gauge
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 4
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_CLOCKS_EVENT_REASONS{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_POWER_VIOLATION Throttling duration due to power constraints (in us).
+# TYPE DCGM_FI_DEV_POWER_VIOLATION counter
+DCGM_FI_DEV_POWER_VIOLATION{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_POWER_VIOLATION{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_POWER_VIOLATION{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_POWER_VIOLATION{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_POWER_VIOLATION{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 6e+06
+DCGM_FI_DEV_POWER_VIOLATION{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_POWER_VIOLATION{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_POWER_VIOLATION{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_THERMAL_VIOLATION Throttling duration due to thermal constraints (in us).
+# TYPE DCGM_FI_DEV_THERMAL_VIOLATION counter
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_THERMAL_VIOLATION{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_SYNC_BOOST_VIOLATION Throttling duration due to sync-boost constraints (in us).
+# TYPE DCGM_FI_DEV_SYNC_BOOST_VIOLATION counter
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_SYNC_BOOST_VIOLATION{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_BOARD_LIMIT_VIOLATION Throttling duration due to board limit constraints (in us).
+# TYPE DCGM_FI_DEV_BOARD_LIMIT_VIOLATION counter
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_BOARD_LIMIT_VIOLATION{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_RELIABILITY_VIOLATION Throttling duration due to reliability constraints (in us).
+# TYPE DCGM_FI_DEV_RELIABILITY_VIOLATION counter
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_RELIABILITY_VIOLATION{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_XID_ERRORS Value of the last XID error encountered.
+# TYPE DCGM_FI_DEV_XID_ERRORS gauge
+DCGM_FI_DEV_XID_ERRORS{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_XID_ERRORS{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_ECC_SBE_VOL_TOTAL Total single-bit (correctable) volatile ECC errors.
+# TYPE DCGM_FI_DEV_ECC_SBE_VOL_TOTAL counter
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_ECC_DBE_VOL_TOTAL Total double-bit (uncorrectable) volatile ECC errors.
+# TYPE DCGM_FI_DEV_ECC_DBE_VOL_TOTAL counter
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS Rows remapped for correctable errors.
+# TYPE DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS counter
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS Rows remapped for uncorrectable errors.
+# TYPE DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS counter
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_ROW_REMAP_FAILURE Whether remapping of rows has failed.
+# TYPE DCGM_FI_DEV_ROW_REMAP_FAILURE gauge
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_ROW_REMAP_FAILURE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_PCIE_REPLAY_COUNTER Total PCIe retries.
+# TYPE DCGM_FI_DEV_PCIE_REPLAY_COUNTER counter
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_DEV_PCIE_REPLAY_COUNTER{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_PROF_GR_ENGINE_ACTIVE Ratio of time the graphics engine is active.
+# TYPE DCGM_FI_PROF_GR_ENGINE_ACTIVE gauge
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.972
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.919
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.975
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.777
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.96
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.975
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.959
+DCGM_FI_PROF_GR_ENGINE_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.939
+# HELP DCGM_FI_PROF_SM_ACTIVE Ratio of cycles an SM has at least 1 warp assigned.
+# TYPE DCGM_FI_PROF_SM_ACTIVE gauge
+DCGM_FI_PROF_SM_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.864
+DCGM_FI_PROF_SM_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.822
+DCGM_FI_PROF_SM_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.327
+DCGM_FI_PROF_SM_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.652
+DCGM_FI_PROF_SM_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.831
+DCGM_FI_PROF_SM_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.878
+DCGM_FI_PROF_SM_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.864
+DCGM_FI_PROF_SM_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.877
+# HELP DCGM_FI_PROF_SM_OCCUPANCY Ratio of resident warps to the maximum.
+# TYPE DCGM_FI_PROF_SM_OCCUPANCY gauge
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.45
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.4
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.1
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.3
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.44
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.44
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.45
+DCGM_FI_PROF_SM_OCCUPANCY{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.45
+# HELP DCGM_FI_PROF_PIPE_TENSOR_ACTIVE Ratio of cycles the tensor (HMMA) pipe is active.
+# TYPE DCGM_FI_PROF_PIPE_TENSOR_ACTIVE gauge
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.503
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.439
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.043
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.335
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.358
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.356
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.486
+DCGM_FI_PROF_PIPE_TENSOR_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.454
+# HELP DCGM_FI_PROF_DRAM_ACTIVE Ratio of cycles the device memory interface is active.
+# TYPE DCGM_FI_PROF_DRAM_ACTIVE gauge
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.341
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.323
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.064
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.471
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.298
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.323
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.355
+DCGM_FI_PROF_DRAM_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.273
+# HELP DCGM_FI_PROF_PIPE_FP64_ACTIVE Ratio of cycles the FP64 pipe is active.
+# TYPE DCGM_FI_PROF_PIPE_FP64_ACTIVE gauge
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_PROF_PIPE_FP64_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_PROF_PIPE_FP32_ACTIVE Ratio of cycles the FP32 pipe is active.
+# TYPE DCGM_FI_PROF_PIPE_FP32_ACTIVE gauge
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.08
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.07
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.278
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.05
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.08
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.08
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.08
+DCGM_FI_PROF_PIPE_FP32_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.08
+# HELP DCGM_FI_PROF_PIPE_FP16_ACTIVE Ratio of cycles the FP16 pipe is active.
+# TYPE DCGM_FI_PROF_PIPE_FP16_ACTIVE gauge
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0.05
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0.05
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0.01
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0.04
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0.05
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0.05
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0.05
+DCGM_FI_PROF_PIPE_FP16_ACTIVE{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0.05
+# HELP DCGM_FI_PROF_PCIE_TX_BYTES PCIe bytes transmitted per second.
+# TYPE DCGM_FI_PROF_PCIE_TX_BYTES gauge
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 1.656370649e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 1.471509286e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 1.464930421e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1.310505189e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 1.44351086e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 1.120967862e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 1.505615576e+09
+DCGM_FI_PROF_PCIE_TX_BYTES{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 1.341804284e+09
+# HELP DCGM_FI_PROF_PCIE_RX_BYTES PCIe bytes received per second.
+# TYPE DCGM_FI_PROF_PCIE_RX_BYTES gauge
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 2.419334754e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 2.232949109e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 2.780748102e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1.938830998e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 2.336591051e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 2.953676032e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 2.219855334e+09
+DCGM_FI_PROF_PCIE_RX_BYTES{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 2.076101269e+09
+# HELP DCGM_FI_PROF_NVLINK_TX_BYTES NVLink bytes transmitted per second.
+# TYPE DCGM_FI_PROF_NVLINK_TX_BYTES gauge
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 4.192150004e+10
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_PROF_NVLINK_TX_BYTES{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_PROF_NVLINK_RX_BYTES NVLink bytes received per second.
+# TYPE DCGM_FI_PROF_NVLINK_RX_BYTES gauge
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 3.905122436e+10
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 0
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 0
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 0
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 0
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
+DCGM_FI_PROF_NVLINK_RX_BYTES{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_FI_DEV_ENFORCED_POWER_LIMIT Effective power limit the driver enforces (in W).
+# TYPE DCGM_FI_DEV_ENFORCED_POWER_LIMIT gauge
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 400
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 400
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 400
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 400
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 250
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 400
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 400
+DCGM_FI_DEV_ENFORCED_POWER_LIMIT{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 400
+# HELP DCGM_FI_DEV_MAX_SM_CLOCK Maximum SM clock (in MHz).
+# TYPE DCGM_FI_DEV_MAX_SM_CLOCK gauge
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 1410
+DCGM_FI_DEV_MAX_SM_CLOCK{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 1410
+# HELP DCGM_FI_DEV_MAX_MEM_CLOCK Maximum memory clock (in MHz).
+# TYPE DCGM_FI_DEV_MAX_MEM_CLOCK gauge
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 1593
+DCGM_FI_DEV_MAX_MEM_CLOCK{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 1593

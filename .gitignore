@@ -4,6 +4,8 @@
 /ipcollect-nvidia
 /ipcollect-amd
 /ipview
+/ipcollect
+/ipcollect-out/
 *.exe
 *.test
 *.out
