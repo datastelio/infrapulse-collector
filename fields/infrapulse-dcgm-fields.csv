@@ -48,3 +48,6 @@ DCGM_FI_PROF_NVLINK_RX_BYTES, gauge, NVLink bytes received per second.
 DCGM_FI_DEV_ENFORCED_POWER_LIMIT, gauge, Effective power limit the driver enforces (in W).
 DCGM_FI_DEV_MAX_SM_CLOCK, gauge, Maximum SM clock (in MHz).
 DCGM_FI_DEV_MAX_MEM_CLOCK, gauge, Maximum memory clock (in MHz).
+
+# Labels (attached to every metric)
+DCGM_FI_DRIVER_VERSION, label, Driver version.
