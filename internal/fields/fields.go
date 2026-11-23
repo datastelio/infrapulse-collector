@@ -40,6 +40,13 @@ type Field struct {
 	Kind    Kind
 	Unit    string
 	Help    string
+	// Scale converts a value read under Name (or an alias) to Unit; 0 means 1.
+	// dcgm-exporter serves the violation counters in nanoseconds (DCGM's
+	// dcgm_fields.h; a throttled GPU adds 1e9 per second), and the columns are
+	// in microseconds. NameHelp is the HELP text for the Name line where the
+	// served unit differs from Unit.
+	Scale    float64
+	NameHelp string
 	// EventOnly fields have no value until the event first happens (DCGM reports
 	// the last XID only after one occurs), so absence means "none so far".
 	EventOnly bool
@@ -62,16 +69,16 @@ var Catalog = []Field{
 	{ID: 140, Name: "DCGM_FI_DEV_MEMORY_TEMP", Column: "mem_temp_c", Tier: TierB, Kind: Gauge, Unit: "C", Help: "Memory (HBM) temperature (in C)."},
 	{ID: 190, Name: "DCGM_FI_DEV_PSTATE", Column: "pstate", Tier: TierB, Kind: Gauge, Unit: "", Help: "Performance state (P-state) 0-15."},
 	{ID: 112, Name: "DCGM_FI_DEV_CLOCKS_EVENT_REASONS", Aliases: []string{"DCGM_FI_DEV_CLOCK_THROTTLE_REASONS"}, Column: "clock_event_reasons", Tier: TierB, Kind: Gauge, Unit: "bitmask", Help: "Current clock event (throttle) reasons bitmask."},
-	{ID: 240, Name: "DCGM_FI_DEV_POWER_VIOLATION", Column: "power_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to power constraints (in us)."},
-	{ID: 241, Name: "DCGM_FI_DEV_THERMAL_VIOLATION", Column: "thermal_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to thermal constraints (in us)."},
-	{ID: 242, Name: "DCGM_FI_DEV_SYNC_BOOST_VIOLATION", Column: "sync_boost_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to sync-boost constraints (in us)."},
-	{ID: 243, Name: "DCGM_FI_DEV_BOARD_LIMIT_VIOLATION", Column: "board_limit_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to board limit constraints (in us)."},
-	{ID: 245, Name: "DCGM_FI_DEV_RELIABILITY_VIOLATION", Column: "reliability_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to reliability constraints (in us)."},
+	{ID: 240, Name: "DCGM_FI_DEV_POWER_VIOLATION", Column: "power_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to power constraints (in us; dcgm-exporter serves ns).", Scale: 1e-3, NameHelp: "Throttling duration due to power constraints (in ns)."},
+	{ID: 241, Name: "DCGM_FI_DEV_THERMAL_VIOLATION", Column: "thermal_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to thermal constraints (in us; dcgm-exporter serves ns).", Scale: 1e-3, NameHelp: "Throttling duration due to thermal constraints (in ns)."},
+	{ID: 242, Name: "DCGM_FI_DEV_SYNC_BOOST_VIOLATION", Column: "sync_boost_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to sync-boost constraints (in us; dcgm-exporter serves ns).", Scale: 1e-3, NameHelp: "Throttling duration due to sync-boost constraints (in ns)."},
+	{ID: 243, Name: "DCGM_FI_DEV_BOARD_LIMIT_VIOLATION", Column: "board_limit_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to board limit constraints (in us; dcgm-exporter serves ns).", Scale: 1e-3, NameHelp: "Throttling duration due to board limit constraints (in ns)."},
+	{ID: 245, Name: "DCGM_FI_DEV_RELIABILITY_VIOLATION", Column: "reliability_violation_us", Tier: TierB, Kind: Counter, Unit: "us", Help: "Throttling duration due to reliability constraints (in us; dcgm-exporter serves ns).", Scale: 1e-3, NameHelp: "Throttling duration due to reliability constraints (in ns)."},
 	{ID: 230, Name: "DCGM_FI_DEV_XID_ERRORS", Column: "xid", Tier: TierB, Kind: Gauge, Unit: "code", Help: "Value of the last XID error encountered.", EventOnly: true},
 	{ID: 310, Name: "DCGM_FI_DEV_ECC_SBE_VOL_TOTAL", Column: "ecc_sbe_volatile", Tier: TierB, Kind: Counter, Unit: "count", Help: "Total single-bit (correctable) volatile ECC errors."},
 	{ID: 311, Name: "DCGM_FI_DEV_ECC_DBE_VOL_TOTAL", Column: "ecc_dbe_volatile", Tier: TierB, Kind: Counter, Unit: "count", Help: "Total double-bit (uncorrectable) volatile ECC errors."},
-	{ID: 393, Name: "DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS", Column: "remapped_rows_correctable", Tier: TierB, Kind: Counter, Unit: "count", Help: "Rows remapped for correctable errors."},
-	{ID: 394, Name: "DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS", Column: "remapped_rows_uncorrectable", Tier: TierB, Kind: Counter, Unit: "count", Help: "Rows remapped for uncorrectable errors."},
+	{ID: 394, Name: "DCGM_FI_DEV_CORRECTABLE_REMAPPED_ROWS", Column: "remapped_rows_correctable", Tier: TierB, Kind: Counter, Unit: "count", Help: "Rows remapped for correctable errors."},
+	{ID: 393, Name: "DCGM_FI_DEV_UNCORRECTABLE_REMAPPED_ROWS", Column: "remapped_rows_uncorrectable", Tier: TierB, Kind: Counter, Unit: "count", Help: "Rows remapped for uncorrectable errors."},
 	{ID: 395, Name: "DCGM_FI_DEV_ROW_REMAP_FAILURE", Column: "row_remap_failure", Tier: TierB, Kind: Gauge, Unit: "bool", Help: "Whether remapping of rows has failed."},
 	{ID: 202, Name: "DCGM_FI_DEV_PCIE_REPLAY_COUNTER", Column: "pcie_replay_count", Tier: TierB, Kind: Counter, Unit: "count", Help: "Total PCIe retries."},
 
@@ -111,6 +118,23 @@ func init() {
 			byName[a] = f
 		}
 	}
+}
+
+// NameScale is the factor that converts a value served under Name to Unit.
+func (f Field) NameScale() float64 {
+	if f.Scale == 0 {
+		return 1
+	}
+	return f.Scale
+}
+
+// ExporterHelp is the HELP text for the field's line in a dcgm-exporter field
+// file: it describes the value in the unit the exporter serves.
+func (f Field) ExporterHelp() string {
+	if f.NameHelp != "" {
+		return f.NameHelp
+	}
+	return f.Help
 }
 
 // Lookup returns the catalog entry for a metric name or alias.

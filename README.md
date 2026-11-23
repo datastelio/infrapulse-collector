@@ -30,7 +30,7 @@ ipcollect help run           # one command
 
 ### Install
 
-From a release: download `ipcollect-linux-amd64` (or `-arm64`) with `SHA256SUMS`, then
+From prebuilt binaries (we send `ipcollect-linux-amd64` or `-arm64` with `SHA256SUMS` on request; `go version -m` shows the commit they were built from):
 
 ```bash
 sha256sum -c --ignore-missing SHA256SUMS        # every line must say OK
@@ -54,6 +54,11 @@ To remove it, delete `/opt/infrapulse/ipcollect` and the output folder. Nothing 
 #### 1. Start dcgm-exporter with the InfraPulse field file
 
 The field file is [`fields/infrapulse-dcgm-fields.csv`](fields/infrapulse-dcgm-fields.csv) (or `ipcollect fields --dcgm-exporter-csv`). Skip this step if dcgm-exporter is already running with it.
+
+- **dcgm-exporter version:** ipcollect 2.0.x reads the field names and the `Hostname` label of dcgm-exporter 4.8.2 and earlier. Release 4.8.3 renamed that label to `hostname`, and 4.9.0 renamed most fields, changed their units and rejects the clock-event reasons line of this field file, so do not load the file on 4.9.0.
+- **dcgm-exporter already running with its own field file:** add the lines you are missing to that file; do not replace it. dcgm-exporter exports only what its file lists, so replacing the file would stop every metric that is not on our list. Try the change on one node first: the exporter refuses to start on a field name it does not accept.
+
+To start a new dcgm-exporter with the file:
 
 ```bash
 docker run -d --name dcgm-exporter --gpus all --cap-add SYS_ADMIN -p 9400:9400 \

@@ -100,7 +100,7 @@ func Build(ts time.Time, samples []promtext.Sample, opt Options) ([]Row, []strin
 			continue
 		}
 		if amdFields == nil {
-			r.Values[f.Column] = s.Value
+			r.Values[f.Column] = s.Value * f.NameScale()
 			continue
 		}
 		acc := amd[r]

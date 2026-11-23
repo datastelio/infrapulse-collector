@@ -77,3 +77,25 @@ func TestPackagePowerWhenPowerUsageMissing(t *testing.T) {
 		t.Fatalf("rows: %+v", rows)
 	}
 }
+
+// dcgm-exporter serves the violation counters in nanoseconds; the column is in
+// microseconds.
+func TestBuildConvertsViolationCounters(t *testing.T) {
+	const text = `DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-1",modelName="NVIDIA A100-SXM4-40GB",Hostname="node1"} 97
+DCGM_FI_DEV_POWER_VIOLATION{gpu="0",UUID="GPU-1",modelName="NVIDIA A100-SXM4-40GB",Hostname="node1"} 2.5e+12
+`
+	samples, err := promtext.Parse(strings.NewReader(text))
+	if err != nil {
+		t.Fatal(err)
+	}
+	rows, _ := Build(time.Unix(1_700_000_000, 0), samples, Options{})
+	if len(rows) != 1 {
+		t.Fatalf("rows=%d", len(rows))
+	}
+	if got := rows[0].Values["power_violation_us"]; got != 2.5e9 {
+		t.Errorf("power_violation_us = %v, want 2.5e9 (2.5e12 ns)", got)
+	}
+	if got := rows[0].Values["gpu_util_pct"]; got != 97 {
+		t.Errorf("gpu_util_pct = %v, want 97 unscaled", got)
+	}
+}
