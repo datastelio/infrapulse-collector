@@ -178,6 +178,16 @@ DCGM_FI_DEV_XID_ERRORS{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4
 DCGM_FI_DEV_XID_ERRORS{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e"} 0
 DCGM_FI_DEV_XID_ERRORS{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f"} 0
 DCGM_FI_DEV_XID_ERRORS{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g"} 0
+# HELP DCGM_EXP_XID_ERRORS_COUNT Count of XID errors within the user-specified time window.
+# TYPE DCGM_EXP_XID_ERRORS_COUNT gauge
+DCGM_EXP_XID_ERRORS_COUNT{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="1",UUID="GPU-00000001-sim-0001-5163",device="nvidia1",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-b",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="2",UUID="GPU-00000001-sim-0002-5163",device="nvidia2",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-c",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="3",UUID="GPU-00000001-sim-0003-5163",device="nvidia3",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",container="main",namespace="default",pod="infer-a",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="4",UUID="GPU-00000001-sim-0004-5163",device="nvidia4",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-d",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="5",UUID="GPU-00000001-sim-0005-5163",device="nvidia5",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-e",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="6",UUID="GPU-00000001-sim-0006-5163",device="nvidia6",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-f",window_size_in_ms="300000"} 0
+DCGM_EXP_XID_ERRORS_COUNT{gpu="7",UUID="GPU-00000001-sim-0007-5163",device="nvidia7",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-g",window_size_in_ms="300000"} 0
 # HELP DCGM_FI_DEV_ECC_SBE_VOL_TOTAL Total single-bit (correctable) volatile ECC errors.
 # TYPE DCGM_FI_DEV_ECC_SBE_VOL_TOTAL counter
 DCGM_FI_DEV_ECC_SBE_VOL_TOTAL{gpu="0",UUID="GPU-00000001-sim-0000-5163",device="nvidia0",modelName="NVIDIA A100-SXM4-80GB",Hostname="sim-node",DCGM_FI_DRIVER_VERSION="550.54.15",hpc_job="train-a"} 0

@@ -15,9 +15,10 @@ vet:
 	go vet ./...
 	@test -z "$$(gofmt -l .)" || (gofmt -l .; echo "gofmt needed"; exit 1)
 
-# Regenerate the dcgm-exporter field file after editing internal/fields (a test fails if it is stale).
+# Regenerate the dcgm-exporter field files after editing internal/fields (a test fails if one is stale).
 fields:
 	go run ./cmd/ipcollect fields --dcgm-exporter-csv > fields/infrapulse-dcgm-fields.csv
+	go run ./cmd/ipcollect fields --dcgm-exporter-csv --exporter 4.9 > fields/infrapulse-dcgm-fields-4.9.csv
 
 # Static binaries for Linux GPU hosts: dist/linux-<arch>/<cmd>
 dist:

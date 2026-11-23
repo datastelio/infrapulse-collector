@@ -17,6 +17,7 @@ import (
 	"log/slog"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"runtime"
 	"strings"
 	"syscall"
@@ -42,6 +43,8 @@ func main() {
 		code = cmdCheck(os.Args[2:])
 	case "fields":
 		code = cmdFields(os.Args[2:])
+	case "convert":
+		code = cmdConvert(os.Args[2:])
 	case "version", "--version", "-v":
 		fmt.Println("ipcollect", version)
 	case "help", "-h", "-help", "--help":
@@ -157,6 +160,62 @@ func cmdRun(args []string) int {
 	return 0
 }
 
+type convertOpts struct {
+	fs                *flag.FlagSet
+	inputs, jobLabels listFlag
+	out, format, salt *string
+}
+
+func newConvertFlags() *convertOpts {
+	o := &convertOpts{fs: flag.NewFlagSet("convert", flag.ContinueOnError)}
+	fs := o.fs
+	fs.Var(&o.inputs, "in", "export folder or file: Prometheus API results (.json, .json.gz, as infrapulse-export.sh writes) or promtool tsdb dump text (.txt, .txt.gz); repeatable. Subfolders are not read")
+	fs.Var(&o.jobLabels, "job-label", "label name holding a scheduler job ID; repeatable (default: job_id,hpc_job,slurm_job_id)")
+	o.out = fs.String("out", "./ipcollect-out", "output directory; created if missing")
+	o.format = fs.String("format", "csv", "output format: csv or jsonl")
+	o.salt = fs.String("salt", os.Getenv("IPCOLLECT_SALT"), "secret salt; when set, hostnames, GPU UUIDs, pods and job IDs are pseudonymized as in `run`. Leave it empty for an export already hashed by infrapulse-hash-labels.py (default: env IPCOLLECT_SALT)")
+	return o
+}
+
+func cmdConvert(args []string) int {
+	o := newConvertFlags()
+	if code, ok := parse(o.fs, args); !ok {
+		return code
+	}
+	if len(o.inputs) == 0 {
+		fmt.Fprintln(os.Stderr, "ipcollect convert: name the export with --in <folder or file>\nRun \"ipcollect help convert\" for its flags.")
+		return 2
+	}
+	meta, err := collect.Convert(collect.ConvertConfig{Inputs: o.inputs, OutDir: *o.out, Format: *o.format,
+		Salt: *o.salt, JobLabels: o.jobLabels, Version: version})
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "ipcollect convert:", err)
+		return 1
+	}
+	fmt.Printf("%d rows, %d GPUs, %s to %s, %g s between samples\n", meta.Rows, meta.GPUs,
+		meta.StartedAt.Format(time.RFC3339), meta.EndedAt.Format(time.RFC3339), meta.IntervalSeconds)
+	if meta.DCGM47 {
+		fmt.Println("Metric names: DCGM 4.7 (dcgm-exporter 4.9.0 and later); values converted to the gpu_samples units.")
+	}
+	if meta.ReasonsDerived {
+		fmt.Println("Throttle reasons: rebuilt from the throttle-seconds counters.")
+	}
+	var empty []string
+	for _, f := range fields.Catalog {
+		if !meta.Coverage[f.Column] && !(meta.Vendor == "amd" && len(fields.AMDNamesFor(f.Column)) == 0) {
+			empty = append(empty, f.Column)
+		}
+	}
+	if len(empty) > 0 {
+		fmt.Printf("Columns with no data: %s\n", strings.Join(empty, ", "))
+	}
+	if len(meta.UnknownMetrics) > 0 {
+		fmt.Printf("Metrics outside the InfraPulse catalog (ignored): %s\n", strings.Join(meta.UnknownMetrics, ", "))
+	}
+	fmt.Printf("Wrote %s\n", filepath.Join(*o.out, meta.SamplesFile))
+	return 0
+}
+
 type checkOpts struct {
 	fs                 *flag.FlagSet
 	sources, jobLabels listFlag
@@ -201,6 +260,8 @@ func cmdCheck(args []string) int {
 	amd := res.Vendor == "amd"
 	if amd {
 		fmt.Printf("GPUs reporting: %d (AMD Device Metrics Exporter)\n\n", res.GPUs)
+	} else if res.DCGM47 {
+		fmt.Printf("GPUs reporting: %d (dcgm-exporter 4.9 or later: DCGM 4.7 metric names, converted to InfraPulse units)\n\n", res.GPUs)
 	} else {
 		fmt.Printf("GPUs reporting: %d\n\n", res.GPUs)
 	}
@@ -210,13 +271,18 @@ func cmdCheck(args []string) int {
 	failed := false
 	tw := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
 	for _, t := range []fields.Tier{fields.TierA, fields.TierB, fields.TierC, fields.TierS} {
+		// On dcgm-exporter 4.9 the throttle-reasons bitmask is not served; ipcollect
+		// rebuilds it during `run` from the throttle-seconds counters.
+		derived := func(f fields.Field) bool {
+			return res.DCGM47 && f.V2 == "" && f.Column == "clock_event_reasons" && res.ReasonsDerivable
+		}
 		got, total := 0, 0
 		for _, f := range byTier[t] {
 			if amd && len(fields.AMDNamesFor(f.Column)) == 0 {
 				continue
 			}
 			total++
-			if res.Coverage[f.Column] || f.EventOnly {
+			if res.Coverage[f.Column] || f.EventOnly || derived(f) {
 				got++
 			}
 		}
@@ -244,16 +310,26 @@ func cmdCheck(args []string) int {
 				fmt.Fprintf(tw, "  %s\t%s\t%s\n", f.Column, strings.Join(names, " / "), status)
 				continue
 			}
-			status := "ok"
-			if !res.Coverage[f.Column] && f.EventOnly {
+			status, name := "ok", f.Name
+			if res.DCGM47 {
+				if name = f.V2; name == "" {
+					name = f.Name + " (not served by 4.9)"
+				}
+			}
+			if derived(f) {
+				status = "derived during run from the throttle-seconds counters"
+			} else if !res.Coverage[f.Column] && f.EventOnly {
 				status = "none yet (reported only after one occurs)"
 			} else if !res.Coverage[f.Column] {
 				status = "MISSING"
+				if res.DCGM47 && f.V2 == "" {
+					status = "MISSING (add the throttle-seconds counters to derive it)"
+				}
 				if strings.Contains(*require, string(t)) {
 					failed = true
 				}
 			}
-			fmt.Fprintf(tw, "  %d\t%s\t%s\n", f.ID, f.Name, status)
+			fmt.Fprintf(tw, "  %d\t%s\t%s\n", f.ID, name, status)
 		}
 	}
 	tw.Flush()
@@ -355,13 +431,15 @@ func checkHost(src collect.HostSource, desc string, gpuHosts []string, require s
 }
 
 type fieldsOpts struct {
-	fs  *flag.FlagSet
-	csv *bool
+	fs       *flag.FlagSet
+	csv      *bool
+	exporter *string
 }
 
 func newFieldsFlags() *fieldsOpts {
 	o := &fieldsOpts{fs: flag.NewFlagSet("fields", flag.ContinueOnError)}
 	o.csv = o.fs.Bool("dcgm-exporter-csv", false, "print the dcgm-exporter field file (load it with dcgm-exporter -f) instead of the table")
+	o.exporter = o.fs.String("exporter", "4.8", "with --dcgm-exporter-csv: 4.8 for dcgm-exporter 4.8.x and earlier (classic DCGM names), 4.9 for 4.9.0 and later (DCGM 4.7 names)")
 	return o
 }
 
@@ -372,7 +450,15 @@ func cmdFields(args []string) int {
 	}
 	csv := o.csv
 	if *csv {
-		fmt.Print(fields.DCGMExporterCSV())
+		switch *o.exporter {
+		case "4.8":
+			fmt.Print(fields.DCGMExporterCSV())
+		case "4.9":
+			fmt.Print(fields.DCGMExporterCSVV2())
+		default:
+			fmt.Fprintf(os.Stderr, "ipcollect fields: --exporter must be 4.8 or 4.9, got %q\n", *o.exporter)
+			return 2
+		}
 		return 0
 	}
 	tw := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)

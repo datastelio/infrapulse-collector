@@ -30,4 +30,5 @@ jobs:
           ./dist/linux-amd64/ipcollect --help > /dev/null
           ./dist/linux-amd64/ipcollect version
           ./dist/linux-amd64/ipcollect fields --dcgm-exporter-csv | diff - fields/infrapulse-dcgm-fields.csv
+          ./dist/linux-amd64/ipcollect fields --dcgm-exporter-csv --exporter 4.9 | diff - fields/infrapulse-dcgm-fields-4.9.csv
           ! ./dist/linux-amd64/ipcollect run --no-such-flag

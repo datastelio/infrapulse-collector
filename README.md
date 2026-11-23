@@ -53,20 +53,30 @@ To remove it, delete `/opt/infrapulse/ipcollect` and the output folder. Nothing 
 
 #### 1. Start dcgm-exporter with the InfraPulse field file
 
-The field file is [`fields/infrapulse-dcgm-fields.csv`](fields/infrapulse-dcgm-fields.csv) (or `ipcollect fields --dcgm-exporter-csv`). Skip this step if dcgm-exporter is already running with it.
+There are two field files, one per dcgm-exporter name generation. Skip this step if dcgm-exporter is already running with the lines of the one for your version.
 
-- **dcgm-exporter version:** ipcollect 2.0.x reads the field names and the `Hostname` label of dcgm-exporter 4.8.2 and earlier. Release 4.8.3 renamed that label to `hostname`, and 4.9.0 renamed most fields, changed their units and rejects the clock-event reasons line of this field file, so do not load the file on 4.9.0.
-- **dcgm-exporter already running with its own field file:** add the lines you are missing to that file; do not replace it. dcgm-exporter exports only what its file lists, so replacing the file would stop every metric that is not on our list. Try the change on one node first: the exporter refuses to start on a field name it does not accept.
+| dcgm-exporter | Field file | Same as |
+| --- | --- | --- |
+| 4.8.x and earlier | [`fields/infrapulse-dcgm-fields.csv`](fields/infrapulse-dcgm-fields.csv) | `ipcollect fields --dcgm-exporter-csv` |
+| 4.9.0 and later | [`fields/infrapulse-dcgm-fields-4.9.csv`](fields/infrapulse-dcgm-fields-4.9.csv) | `ipcollect fields --dcgm-exporter-csv --exporter 4.9` |
 
-To start a new dcgm-exporter with the file:
+- **dcgm-exporter version:** ipcollect reads both name generations and writes the same columns and units for either: the classic DCGM names of 4.8.x and earlier, and the DCGM 4.7 names of 4.9.0 and later (ratios, bytes, joules, hertz and seconds are converted). It reads the node name from the `Hostname` label (4.8.2 and earlier) or `hostname` (4.8.3 and later).
+- **Throttle reasons on 4.9:** dcgm-exporter 4.9.0 rejects the clock-event reasons bitmask, so the 4.9 file leaves it out and the 4.8 file must not be loaded there. ipcollect derives the reasons from the throttle-seconds counters instead: the power-cap, thermal and sync-boost bits only.
+- **XID:** the last-XID field has no series until a GPU has had an XID. Both files also list dcgm-exporter's own `DCGM_EXP_XID_ERRORS_COUNT`, which counts each XID code in the exporter's time window and reads 0 when there are none; ipcollect writes it as `xid_count`.
+- **NVLink:** add the two `DCGM_FI_PROF_NVLINK_*` lines only on nodes with NVLink or NVSwitch.
+- **What has run on real GPUs:** ipcollect 2.0.1 collected live against dcgm-exporter 4.8.2 (A100, Nov 2026) and matched the same exporter scraped by Prometheus value for value. This release's mapping, including the 4.9 names and units, was checked on data exported from real 4.8.2 and 4.9.0 exporters through `ipcollect convert`; against a live 4.9 exporter it has run only on simulated scrapes.
+- **dcgm-exporter already running with its own field file:** add the lines you are missing to that file ([`scripts/path-a/infrapulse-merge-fields.sh`](scripts/path-a/infrapulse-merge-fields.sh) does the merge and removes nothing); do not replace it. dcgm-exporter exports only what its file lists, so replacing the file would stop every metric that is not on our list. Try the change on one node first: the exporter refuses to start on a field name it does not accept.
+
+To start a new dcgm-exporter with the file (on 4.9.0 and later, mount `infrapulse-dcgm-fields-4.9.csv`):
 
 ```bash
-docker run -d --name dcgm-exporter --gpus all --cap-add SYS_ADMIN -p 9400:9400 \
+docker run -d --name dcgm-exporter --hostname "$(hostname)" --gpus all --cap-add SYS_ADMIN -p 9400:9400 \
   -v $PWD/infrapulse-dcgm-fields.csv:/etc/dcgm-exporter/infrapulse.csv \
   nvcr.io/nvidia/k8s/dcgm-exporter:<version> -f /etc/dcgm-exporter/infrapulse.csv -c 10000
 ```
 
 - `-c 10000` samples every 10 seconds.
+- `--hostname "$(hostname)"` makes the node-name label the host's name. Without it, a plain Docker container reports its container ID.
 - `--cap-add SYS_ADMIN` turns on the profiling fields (Tier C). Without it, Tier C stays empty.
 - On Kubernetes, load the same file through the GPU Operator's custom metrics ConfigMap instead.
 - If your DCGM version rejects a field name, comment that line out of the file.
@@ -115,7 +125,8 @@ aws s3 cp --recursive /var/lib/infrapulse/$(hostname) \
 | --- | --- |
 | `check` | scrapes once and reports which fields arrive, by tier; writes nothing |
 | `run` | scrapes every `--interval` and writes `gpu_samples` and `host_samples` files to `--out` |
-| `fields` | lists the fields InfraPulse collects, or prints the dcgm-exporter field file |
+| `convert` | turns metrics exported from Prometheus (dcgm-exporter series already being scraped) into the same `gpu_samples` file |
+| `fields` | lists the fields InfraPulse collects, or prints a dcgm-exporter field file |
 | `version` | prints the version |
 | `help [command]` | prints all help, or one command's help |
 
@@ -132,7 +143,7 @@ Flags take one or two dashes (`-out` or `--out`). Durations are written `10s`, `
 | `--format F` | `csv` | `csv` or `jsonl` |
 | `--salt S` | env `IPCOLLECT_SALT` | secret salt. When set, hostnames, GPU UUIDs, pods and job IDs are replaced by HMAC-SHA256 pseudonyms. The same salt gives the same IDs, so files from different hosts still join. Prefer the environment variable, which keeps the salt out of the process list |
 | `--host-source S` | `proc` | host metrics: `proc` (read `/proc` and `/sys` on this machine), a node_exporter URL (`http://host:9100/metrics`), or `none` |
-| `--host-name N` | this machine's hostname | value of the `host` column in the host metrics. It must match dcgm-exporter's `Hostname` label so GPU and host files join; `check` warns if it doesn't |
+| `--host-name N` | this machine's hostname | value of the `host` column in the host metrics. It must match dcgm-exporter's `Hostname` (or `hostname`) label so GPU and host files join; `check` warns if it doesn't |
 | `--host-procs` | `true` | with `--host-source proc`, also record the processes using each GPU (Tier P). Run as root to see other users' processes. `--host-procs=false` turns it off |
 | `--job-label L` | `job_id,hpc_job,slurm_job_id` | label name holding a scheduler job ID; repeatable |
 | `--timeout D` | `5s` | per-scrape timeout |
@@ -155,6 +166,17 @@ Flags take one or two dashes (`-out` or `--out`). Durations are written `10s`, `
 | --- | --- | --- |
 | (none) | | print the field catalog: tier, DCGM field ID and name, output column, unit; then the host columns |
 | `--dcgm-exporter-csv` | off | print the dcgm-exporter field file (the same as `fields/infrapulse-dcgm-fields.csv`) |
+| `--exporter V` | `4.8` | with `--dcgm-exporter-csv`: `4.8` for dcgm-exporter 4.8.x and earlier, `4.9` for 4.9.0 and later (the same as `fields/infrapulse-dcgm-fields-4.9.csv`) |
+
+#### `ipcollect convert`
+
+| Flag | Default | Meaning |
+| --- | --- | --- |
+| `--in PATH` | (required) | export folder or file: Prometheus HTTP API results (`.json`, `.json.gz`) or `promtool tsdb dump` text (`.txt`, `.txt.gz`); repeatable. Subfolders are not read |
+| `--out DIR` | `./ipcollect-out` | output folder; created if missing |
+| `--format F` | `csv` | `csv` or `jsonl` |
+| `--salt S` | env `IPCOLLECT_SALT` | as for `run`. Leave it empty for an export already hashed by `infrapulse-hash-labels.py` |
+| `--job-label L` | `job_id,hpc_job,slurm_job_id` | as for `run` |
 
 #### Exit codes
 
@@ -180,6 +202,18 @@ ipcollect run --source http://127.0.0.1:9400/metrics --host-source http://127.0.
   --duration 24h --out ./export
 ```
 
+**Metrics already in Prometheus.** Where dcgm-exporter is already scraped into Prometheus or a compatible store, nothing needs installing on the GPU hosts: export a window and convert it. This gives Tiers A, B, C, S and D, but not host causes (H, P).
+
+```bash
+PROM=http://prometheus:9090 START=2026-12-01T00:00:00Z HOURS=24 scripts/path-a/infrapulse-export.sh   # writes ./infrapulse-export
+ipcollect convert --in ./infrapulse-export --out ./converted                                          # gpu_samples_<start>.csv + .meta.json
+```
+
+- `convert` reads Prometheus HTTP API results (what [`infrapulse-export.sh`](scripts/path-a/infrapulse-export.sh) writes) and `promtool tsdb dump` text, and builds one row per GPU per scrape timestamp through the same mapping as `run`: both name generations, unit conversion, derived throttle reasons and `--salt`.
+- Export the samples as scraped: a range selector in an instant query (`metric[1h]`) or `promtool tsdb dump`. A `query_range` at a step resamples them.
+- Labels the store changed are undone: with `honor_labels` off, the workload is in `exported_pod`, `exported_namespace` and `exported_container`. When the series carry no `Hostname` label, the host is taken from `node`, `kubernetes_node` or `instance`.
+- [`infrapulse-hash-labels.py`](scripts/path-a/infrapulse-hash-labels.py) pseudonymizes an export before it leaves your network, with the same salt and the same IDs as `--salt`.
+
 ### Output
 
 Each `run` writes three files to `--out`, named by the start time (UTC):
@@ -197,7 +231,7 @@ With `--format jsonl`, the sample files are `.jsonl` instead of `.csv`. Nothing 
 | Tier | Contents | Source |
 | --- | --- | --- |
 | A | utilization, memory used/free, power, energy, GPU temperature | dcgm-exporter |
-| B | SM and memory clocks, HBM temperature, P-state, throttle reasons, violation counters, XID, ECC, remapped rows, PCIe replays | dcgm-exporter |
+| B | SM and memory clocks, HBM temperature, P-state, throttle reasons, violation counters, XID (last code and count), ECC, remapped rows, PCIe replays | dcgm-exporter |
 | C | SM, tensor, DRAM and FP pipe activity, PCIe and NVLink bytes | dcgm-exporter with `SYS_ADMIN`, bare-metal or passthrough GPUs |
 | S | enforced power limit, maximum SM and memory clocks | dcgm-exporter |
 | D | job labels: Kubernetes `namespace`/`pod`/`container`, or a scheduler job label | dcgm-exporter pod mapping or HPC job mapping |

@@ -29,6 +29,7 @@ Commands:
   check     scrape once and report which fields arrive, by tier; writes nothing
   run       scrape on an interval and write gpu_samples and host_samples files
   fields    list the fields InfraPulse collects, or print the dcgm-exporter field file
+  convert   turn metrics exported from Prometheus into a gpu_samples file
   version   print the version
   help      print this help, or one command's help
 `
@@ -45,8 +46,13 @@ const examples = `Examples:
   ipcollect run --source http://gpu01:9400/metrics,http://gpu02:9400/metrics \
     --host-source none --duration 24h --out ./fleet
 
-  # 4. The field file to load into dcgm-exporter (dcgm-exporter -f <file>)
-  ipcollect fields --dcgm-exporter-csv > infrapulse-dcgm-fields.csv
+  # 4. The field lines to add to your dcgm-exporter collectors file
+  ipcollect fields --dcgm-exporter-csv > infrapulse-dcgm-fields.csv                      # 4.8.x and earlier
+  ipcollect fields --dcgm-exporter-csv --exporter 4.9 > infrapulse-dcgm-fields-4.9.csv   # 4.9.0 and later
+
+  # 5. Metrics you already keep in Prometheus: export a window, then convert it
+  PROM=http://prometheus:9090 START=2026-12-01T00:00:00Z HOURS=24 ./infrapulse-export.sh
+  ipcollect convert --in ./infrapulse-export --out ./converted
 `
 
 const reference = `Tiers (what each group of fields is for):
@@ -91,6 +97,13 @@ var commands = []cmdHelpEntry{
 		"Prints the InfraPulse field catalog (tier, DCGM field ID and name, column, unit) for\n" +
 			"GPU and host metrics, or the dcgm-exporter field file.",
 		func() *flag.FlagSet { return newFieldsFlags().fs }},
+	{"convert", "ipcollect convert --in <export> [flags]",
+		"Reads dcgm-exporter metrics exported from Prometheus or a compatible store and writes\n" +
+			"one gpu_samples file, one row per GPU per scrape time. Classic and DCGM 4.7 metric\n" +
+			"names (dcgm-exporter 4.9.0 and later) are both read and converted to the same units.\n" +
+			"Export the samples as scraped (infrapulse-export.sh, or promtool tsdb dump): a\n" +
+			"query_range export repeats the last value across missed scrapes.",
+		func() *flag.FlagSet { return newConvertFlags().fs }},
 }
 
 func usage(w io.Writer) {

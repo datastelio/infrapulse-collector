@@ -54,8 +54,13 @@ type Meta struct {
 	GPUs             int             `json:"gpus"`
 	Coverage         map[string]bool `json:"coverage"`
 	Vendor           string          `json:"vendor,omitempty"` // "amd", "nvidia" or "mixed", from the models seen
-	UnknownMetrics   []string        `json:"unknown_metrics"`
-	SamplesFile      string          `json:"samples_file"`
+	// DCGM47: dcgm-exporter served the DCGM 4.7 metric names (4.9.0 and later);
+	// values were converted to the units of the columns. ReasonsDerived:
+	// clock_event_reasons was rebuilt from the throttle-seconds counters.
+	DCGM47         bool     `json:"dcgm_4_7_names,omitempty"`
+	ReasonsDerived bool     `json:"clock_event_reasons_derived,omitempty"`
+	UnknownMetrics []string `json:"unknown_metrics"`
+	SamplesFile    string   `json:"samples_file"`
 
 	HostSource       string          `json:"host_source"`
 	HostSamplesFile  string          `json:"host_samples_file,omitempty"`
@@ -239,10 +244,16 @@ func Run(ctx context.Context, cfg Config, log *slog.Logger) (*Meta, error) {
 	tick := time.NewTicker(cfg.Interval)
 	defer tick.Stop()
 
+	var reasons sample.ReasonDeriver
 	scrape := func(now time.Time) {
 		sctx, cancel := context.WithTimeout(context.Background(), cfg.Timeout)
 		defer cancel()
 		rows, unk, errs := ScrapeAll(sctx, client, cfg.Sources, opt, now)
+		reasons.Apply(rows)
+		for _, r := range rows {
+			meta.DCGM47 = meta.DCGM47 || r.DCGM47
+		}
+		meta.ReasonsDerived = reasons.Derived > 0
 		for _, e := range errs {
 			meta.ScrapesFailed++
 			log.Warn("scrape failed", "err", e)
@@ -372,6 +383,11 @@ type CheckResult struct {
 	HasPodLabel bool
 	HasJobLabel bool
 	Hosts       []string // Hostname labels seen
+	// DCGM47 is set when dcgm-exporter served the DCGM 4.7 metric names (4.9.0
+	// and later). It cannot serve the throttle-reasons bitmask; ReasonsDerivable
+	// says the throttle-seconds counters that replace it arrived.
+	DCGM47           bool
+	ReasonsDerivable bool
 	// Vendor is "amd" when every GPU came from the AMD Device Metrics Exporter,
 	// "nvidia" when every one came from dcgm-exporter, else "mixed" or "".
 	Vendor string
@@ -383,9 +399,11 @@ func Check(ctx context.Context, sources []string, jobLabels []string, timeout ti
 	client := &http.Client{Timeout: timeout}
 	rows, unk, errs := ScrapeAll(ctx, client, sources, sample.Options{JobLabels: jobLabels}, time.Now())
 	res := CheckResult{GPUs: len(rows), Coverage: sample.Coverage(rows), Unknown: unk, Errors: errs}
+	res.ReasonsDerivable = res.Coverage["power_violation_us"] || res.Coverage["thermal_violation_us"]
 	hosts := map[string]bool{}
 	vendors := map[string]bool{}
 	for _, r := range rows {
+		res.DCGM47 = res.DCGM47 || r.DCGM47
 		vendors[fields.Vendor(r.Identity["model"])] = true
 		hosts[r.Identity["host"]] = true
 		if r.Identity["pod"] != "" {
